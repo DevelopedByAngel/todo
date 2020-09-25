@@ -1,0 +1,17 @@
+.Signup
+{
+	display:flex;
+	justify-content:center;
+}
+.Signup .main
+{
+	flex-direction:row-reverse;
+}
+*
+{
+	transition:all 0.25s linear;
+}
+input:autofill { 
+  /*-webkit-box-shadow:200px 200px 100px white inset; */
+  box-shadow:200px 200px 100px white inset; 
+}

@@ -1,0 +1,163 @@
+.Login
+{
+	display:flex;
+	justify-content:center;
+}
+.main
+{
+	position: absolute;
+    justify-content:center;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    background:rgba(255,139,39,0.9);
+    margin-top:1%;
+    height:80%;
+    border-radius:10px;
+    box-shadow:10px 10px 15px rgba(0,0,0,0.45);
+}
+.loginimg
+{
+
+    width: 40vw;
+    height: 80vh;
+    object-fit: cover;
+    margin:1vw;
+}
+h1
+{
+	font-family: 'Lily Script One', cursive;
+	padding:5vh 1vw;
+	color: #fcf7f2;
+	text-shadow:2px 2px 10px black;
+}
+.form
+{
+	height:100%;
+	background:rgb(208,132,66);
+	border:1px solid transparent;
+	border-radius:10px;
+	min-width:25vw;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
+form
+{
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	text-transform:italic;
+	height:100%;
+	overflow:hidden;
+	transition:all 1s ease;
+}
+form span
+{
+	padding: 3vh 0vh;
+}
+input:-webkit-autofill {
+	box-shadow: inset 0px 0px 0px 1000px rgb(208,132,66);
+    background-color: red !important;
+    -webkit-text-fill-color: #FFE0B2;
+}
+form label
+{
+	color : white;
+	font-family: 'Nunito', sans-serif;
+	font-style:italic;
+	font-size:1.2em;
+}
+form span input
+{
+	background:transparent;
+	border:none;
+	outline:none;
+	border-bottom: 1px solid #ffb371;
+    color: #FFE0B2;
+}
+form span input:focus
+{
+	border-bottom:2.5px solid #f7dfd3;
+	color: white;
+
+}
+.round 
+{
+	width:20vh;
+	height:20vh;
+	display:none;
+	align-items:center;
+	justify-content:center;
+	padding:1vh;
+	transition:all 0.25s linear;
+}
+.round span
+{
+	width:2vh;
+	height:2vh;
+	border:1px solid white;
+	border-radius:50%;
+	margin:0vh 1vh;
+	animation-duration:1s;
+	animation-timing-function:linear;
+	animation-iteration-count:infinite;
+	animation-fill-mode:forwards;
+	animation-name:send;
+}
+.round span:nth-child(1)
+{
+	animation-delay:0.3s;
+}
+.round span:nth-child(2)
+{
+	animation-delay:0.6s;
+}
+.round span:nth-child(3)
+{
+	animation-delay:0.9s;
+}
+#submit
+{
+	width:40%;
+	padding:2%;
+	border:1px solid transparent;
+	border-radius:3px;
+	background-color:#63584f;
+	color:white;
+}
+@keyframes send
+{
+	0%{transform:scale(1.5);background-color:rgba(255,255,255,0.5);}
+	100%{transform:scale(1);background-color:white}
+}
+@media only screen and (max-width: 600px)
+{
+	.main
+	{
+		display:flex;
+		flex-direction:row;
+		flex-wrap:wrap;
+		margin:0%;
+		border-top-left-radius:0%;
+		border-top-right-radius:0%;
+		align-items:space-between;
+		justify-content: center;
+		width:100vw;
+	}
+	.loginimg
+	{
+		width:80vw;
+		height:60vh;
+		position:fixed;	
+	}
+	.form
+	{
+		width:80vw;
+		position: absolute;
+		top:25vh;
+		background:rgb(208,132,66,0.9);
+		box-shadow:0px 0px 15px 5px rgba(255,255,255,0.45);
+	}
+}
