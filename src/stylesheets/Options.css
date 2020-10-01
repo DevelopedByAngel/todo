@@ -1,0 +1,59 @@
+.Options
+{
+	cursor: move;
+	position:absolute;
+	left:0px;
+	right:0px;
+	width:100px;
+	height:100px;
+}
+.Optioncontainer
+{
+	position:fixed;
+	display:flex;
+	width:100vw;
+	height:1000vh;
+}
+.drag, .Options
+{
+	cursor:pointer;
+	width:50px;
+	height:50px;
+	border:2px double white;
+	background:#ff963c;
+	background-image: url("../assets/settings.png");
+	background-image:url('../assets/settings.png'), radial-gradient(#d08442, #ff963c); 
+	background-size:100%;
+	border-radius:50%;
+	position:absolute;
+	z-index:3;
+	left:0px;
+	right:0px;	
+}
+.Options
+{
+	animation:pulse 1s infinite ease-out;
+	background:#ff963c;
+}
+@keyframes pulse
+{
+	from { opacity:1;transform:scale(1.5);}
+	50%{opacity:0;transform:scale(1)}
+	to{  opacity:1;transform:scale(1.5); }
+}
+.drag + span
+{
+	width:1000px;
+}
+.opt
+{
+	cursor:pointer;
+	position:absolute;
+	width:40px;
+	height:40px;
+	overflow:hidden;
+	background:red;
+	border:2px double white;
+	border-radius:50%;
+	margin:0px;
+}

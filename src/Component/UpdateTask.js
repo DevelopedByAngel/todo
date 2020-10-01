@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import $ from 'jquery'
 class UpdateTask extends Component {
 	constructor(props)
 	{
@@ -18,27 +19,16 @@ class UpdateTask extends Component {
 		console.log(due.target.value)
 		this.setState({due:due.target.value});
 	}
-	onsubmit=(e)=>
+	onUpdate=(e)=>
 	{
 		console.log('ok')
 		e.preventDefault();
-		fetch('http://localhost:3000/add',{
-			method:'POST',
-			headers:{'Content-Type':'application/json'},
-			body:JSON.stringify({
-				id:this.props.state.user.id,
-				task:this.state.task,
-				due:this.state.due
-			})
-		})
-		.then(res=>res.json())
-		.then(task=>
-		{
-			console.log(task.id);
-			this.props.updatetask(task);
-			
-		})
-		.catch(err=>alert(err))
+		var data={
+			id:$('.editing').attr('id'),
+			task:this.state.task,
+			due:this.state.due
+		}
+		this.props.updatetaskname(data)
 	}
 	  render()
 	  {
@@ -46,12 +36,12 @@ class UpdateTask extends Component {
 	  return (
 	      <div className="Login">
 	      <div className="main">
-	      <form className="loginform" onSubmit={(e)=>this.onsubmit(e)}>
+	      <form className="loginform" onSubmit={(e)=>this.onUpdate(e)}>
 	      <label htmlFor="task">Task</label>
-	      <input type="text" name="task"  onChange={(e)=>this.taskchange(e)}></input><br/>
+	      <input type="text" name="task" className="tasknameediting"  onChange={(e)=>this.taskchange(e)}></input><br/>
 	      <label htmlFor="due">Password</label>
-	      <input type="date" name="due" onChange={(e)=>this.duechange(e)}></input>
-	      <input type="submit" value="add"></input>
+	      <input type="date" name="due" className="taskdueediting" onChange={(e)=>this.duechange(e)}></input>
+	      <input type="submit" value="Update"></input>
 	      </form>
 	      </div>
 	      </div>

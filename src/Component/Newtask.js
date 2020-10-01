@@ -1,4 +1,6 @@
 import React,{Component} from 'react';
+import '../stylesheets/Newtask.css'
+import $ from 'jquery'
 class Newtask extends Component {
 	constructor(props)
 	{
@@ -35,6 +37,7 @@ class Newtask extends Component {
 		.then(task=>
 		{
 			console.log(task.id);
+			$('.NewTask').css('display','none');
 			this.props.updatetask(task);
 			
 		})

@@ -4,12 +4,7 @@ import '../stylesheets/Nav.css'
 const Nav=(props)=>
 {
 	const {route,now}=props;
-	$('*').attr('id','')
-	$('.'+now).attr('id','disabled')
-	if(now==='task')
-		$('.signout').css('display', 'block')
-	else
-		$('.signout').css('display','none')
+	
 	const changeroute=(r)=>
 	{
 		if($(window).width()<600)

@@ -3,16 +3,19 @@ import Signup from './Component/Signup';
 import Login from './Component/Login';
 import TaskList from './Component/TaskList';
 import Newtask from './Component/Newtask';
+import UpdateTask from './Component/UpdateTask';
 import Nav from './Component/Nav';
 import Button from './Component/Button';
+import Quote from './Component/Quote';
+import Options from './Component/Options';
 import './App.css';
-
+import $ from 'jquery';
 class App extends Component {
   constructor(props) {
     super(props);
     this.state =
     {
-      route:'signup',
+      route:'login',
       task:[],
       user:{}
     }
@@ -23,6 +26,7 @@ class App extends Component {
   }
   updatetask=(task)=>
   {
+    $('.delete,.edit,.NewTask').css('display','none') 
     console.log(task)
     this.setState({task:task})
   }
@@ -49,18 +53,21 @@ class App extends Component {
   {
     var id=data.id;
     var task=data.task;
+    var due=data.due;
     fetch('http://localhost:3000/update',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
         id:this.state.user.id,
         taskid:id,
-        task:task
+        task:task,
+        due:due
       })
     })
     .then(res=>res.json())
     .then(task=>
     {
+      console.log(task)
       this.updatetask(task);
       
     })
@@ -88,10 +95,15 @@ class App extends Component {
         :(this.state.route==='signup')
         ?<Signup updateuser={this.updateuser} updatetask={this.updatetask} route={this.RouteChange}/>
         :<div className="taskpage">
-        <TaskList tasklist={this.state.task} deletetask={this.deletetask} updatetaskname={this.updatetaskname}/>
+        <Quote/>
+        <Options/>
+        <div className="TaskList">
+        <TaskList tasklist={this.state.task} deletetask={this.deletetask} /></div>
         <Newtask state={this.state} updatetask={this.updatetask}/>
+        <UpdateTask state={this.state} updatetaskname={this.updatetaskname}/>
         </div>
             }
+                  <Options/>
 
       </div>
     );

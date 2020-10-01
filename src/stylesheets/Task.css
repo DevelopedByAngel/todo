@@ -1,10 +1,73 @@
 .task
 {
-	width:;
+	width:30vw;
+	height:30vh;
+	background:rgba(255,139,39,0.9);
+	transform:skewY(5deg);
+	margin-bottom:-15vh;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	border:1px solid white;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	box-shadow:1px 1px 10px black;
 }
-.rod
+.taskname
 {
-	height:100vh;
-	width:10px;
-	background:grey;
+	margin:0px;
+	padding:0px;
+}
+.tasknow
+{
+	margin-bottom:5px;
+}
+.taskpage
+{
+	display: flex;
+	flex-direction:row;
+	justify-content:space-around;
+	z-index:2;
+}
+.task:nth-child(3n+0)
+{
+	/*transform:skewY(0deg);*/
+}
+.task:nth-child(2n+0)
+{
+	transform:skewY(-5deg)
+}
+.task:first-child
+{
+	margin-top:10px;
+}
+.task:last-child
+{
+	transform:skewY(0deg)
+}
+.TaskList
+{
+	display: flex;
+	flex-direction:column;
+}
+.delete
+{
+	display:none;
+}
+.edit
+{
+	display:none;
+}
+
+@media only screen and (max-width: 600px)
+{
+	.task
+	{
+		width:90vw;
+	}
+	.taskpage
+	{
+		flex-direction:column;
+		align-items:center;
+	}
 }

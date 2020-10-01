@@ -52,7 +52,7 @@ class Signup extends Component {
 	      <div className="main">
 	      <img src={require("../assets/homepage.png")} alt='' className="loginimg"/>
 	      <div className="form">
-	      <form className="signupform" autocomplete="off" onSubmit={(e)=>this.onsubmit(e)}>
+	      <form className="signupform" onSubmit={(e)=>this.onsubmit(e)}>
 	      <h1>Create New account</h1>
 	      <span>
 	      <label htmlFor="name">Name</label><br/>

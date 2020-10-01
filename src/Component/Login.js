@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import '../stylesheets/Login.css';
 import $ from 'jquery';
-const Quotes=require('./quotes.json')
 class Login extends Component {
 	constructor(props)
 	{
@@ -64,7 +63,7 @@ class Login extends Component {
 	  render()
 	  {
 	  	// console.log(Quotes.length)
-	  	// console.log(Quotes[Math.floor(Math.random()*333)])
+	  	// 
 	  return (
 	      <div className="Login">
 	      <div className="main">
@@ -74,11 +73,11 @@ class Login extends Component {
 	      <h1>Welcome back!!!</h1>
 	      <span>
 	      <label htmlFor="email">Email</label><br/>
-	      <input type="email" id='email' name="email"  onChange={(e)=>this.emailchange(e)}></input><br/>
+	      <input type="email" id='email' name="email"   onChange={(e)=>this.emailchange(e)}></input><br/>
 	      </span>
 	      <span>
 	      <label htmlFor="password">Password</label><br/>
-	      <input type="password" id="password" name="password" ></input><br/>
+	      <input type="password" id="password"  name="password" ></input><br/>
 	      </span>
 	      <input type="submit" value="Login" id="submit"></input>
 	      </form>
