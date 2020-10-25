@@ -16,6 +16,7 @@ const Task=(props)=>
   }
 const updatetaskname =(e)=>
 {
+	$('#updatetask').css("display", "block");
 	console.log('ok'+$("#taskname"+$(e.target).attr('id')).text())
 	$('.editing').attr('class','')
 	$(e.target).attr('class','edit editing');

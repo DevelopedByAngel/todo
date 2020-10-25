@@ -69,6 +69,7 @@ class App extends Component {
     {
       console.log(task)
       this.updatetask(task);
+      $('#updatetask').css("display", "none");
       
     })
     .catch(err=>alert(err))
@@ -96,15 +97,14 @@ class App extends Component {
         ?<Signup updateuser={this.updateuser} updatetask={this.updatetask} route={this.RouteChange}/>
         :<div className="taskpage">
         <Quote/>
-        <Options/>
         <div className="TaskList">
-        <TaskList tasklist={this.state.task} deletetask={this.deletetask} /></div>
+        <TaskList tasklist={this.state.task} deletetask={this.deletetask} />
+        <Options/></div>
         <Newtask state={this.state} updatetask={this.updatetask}/>
         <UpdateTask state={this.state} updatetaskname={this.updatetaskname}/>
         </div>
-            }
-                  <Options/>
 
+            }
       </div>
     );
   }

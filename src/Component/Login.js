@@ -7,14 +7,17 @@ class Login extends Component {
 		super(props);
 		this.state=
 		{
-			email:'angelfrancis1806@gmail.com',
-			name:'angel',
-			password:'angel'
+			email:'',
+			password:''
 		}
 	}
 	emailchange=(email)=>
 	{
 		this.setState({email:email.target.value});
+	}
+	passwordChange=(password)=>
+	{
+		this.setState({password:password.target.value})
 	}
 	onsubmit=(e)=>
 	{
@@ -77,7 +80,7 @@ class Login extends Component {
 	      </span>
 	      <span>
 	      <label htmlFor="password">Password</label><br/>
-	      <input type="password" id="password"  name="password" ></input><br/>
+	      <input type="password" id="password"  name="password" onChange={(e)=>this.passwordChange(e)}></input><br/>
 	      </span>
 	      <input type="submit" value="Login" id="submit"></input>
 	      </form>

@@ -4,7 +4,7 @@ import '../stylesheets/Nav.css'
 const Nav=(props)=>
 {
 	const {route,now}=props;
-	
+	console.log(now,"now")
 	const changeroute=(r)=>
 	{
 		if($(window).width()<600)

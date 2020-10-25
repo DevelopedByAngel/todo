@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import $ from 'jquery'
+import '../stylesheets/Newtask.css'
 class UpdateTask extends Component {
 	constructor(props)
 	{
@@ -34,15 +35,17 @@ class UpdateTask extends Component {
 	  {
 	  		console.log(this.props.state)
 	  return (
-	      <div className="Login">
-	      <div className="main">
-	      <form className="loginform" onSubmit={(e)=>this.onUpdate(e)}>
+	  	<div id="updatetask">
+	  	<div className="formblack">
+	      <div className="formin" >
+	      <form className="Taskform" onSubmit={(e)=>this.onUpdate(e)}>
 	      <label htmlFor="task">Task</label>
 	      <input type="text" name="task" className="tasknameediting"  onChange={(e)=>this.taskchange(e)}></input><br/>
-	      <label htmlFor="due">Password</label>
+	      <label htmlFor="due">Date</label>
 	      <input type="date" name="due" className="taskdueediting" onChange={(e)=>this.duechange(e)}></input>
 	      <input type="submit" value="Update"></input>
 	      </form>
+	      </div>
 	      </div>
 	      </div>
 	    );

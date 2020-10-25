@@ -7,19 +7,17 @@ const Options=()=>
 	$('.delete,.edit,.NewTask').css('display','none')
 
 	return (
-		<div className="Optioncontainer">
-	      <div className="eg Options" draggable="false" onDragEnd={(e)=>dragend(e)} onDrag={(e)=>drag(e)}>
-	      </div>
+		<div>
 	      <p onClick={()=>deleteTask()} className="eg opt" id="deleteopt">X</p>
-	      <p onClick={()=>editTask()} className="eg opt" id="editopt">edit</p>
+	      <p onClick={()=>editTask()} className="eg opt" id="editopt">✏️</p>
 	      <p onClick={()=>newTask()} className="eg opt" id="newopt">new</p>
 	      
 	      <div className="eg drag" draggable="true" onClick={()=>optionsclick()} onTouchEnd={(e)=>touchend(e)} onTouchMove={(e)=>touchdrag(e)} onDrag={(e)=>drag(e)}  onDragEnd={(e)=>dragend(e)}>
 	      </div>
 	      </div>
+
 	    );
 }
-
 $('.tooltip').css('left','')
 const touchend=(e)=>
 {
@@ -112,17 +110,17 @@ const optionsclick=()=>
 }
 const deleteTask=()=>
 {
-	$('.delete,.edit,.NewTask').css('display','none');	
+	$('.delete,.edit,#newtask').css('display','none');	
 	$('.delete').css('display','block');
 }
 const editTask=()=>
 {
-	$('.delete,.edit,.NewTask').css('display','none')
+	$('.delete,.edit,#newtask').css('display','none')
 	$('.edit').css('display','block')
 }
 const newTask=()=>
 {
-	$('.delete,.edit,.NewTask').css('display','none')
-	$('.NewTask').css('display','block')
+	$('.delete,.edit,#newtask').css('display','none')
+	$('#newtask').css('display','block')
 }
 export default Options;

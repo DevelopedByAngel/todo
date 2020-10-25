@@ -7,8 +7,8 @@ class Newtask extends Component {
 		super(props);
 		this.state=
 		{
-			task:'new',
-			due:'10-10-2020'
+			task:' ',
+			due:' '
 		}
 	}
 	taskchange=(task)=>
@@ -37,7 +37,7 @@ class Newtask extends Component {
 		.then(task=>
 		{
 			console.log(task.id);
-			$('.NewTask').css('display','none');
+			$('#newtask').css('display','none');
 			this.props.updatetask(task);
 			
 		})
@@ -47,15 +47,17 @@ class Newtask extends Component {
 	  {
 	  		console.log(this.props.state)
 	  return (
-	      <div className="NewTask">
-	      <div className="main">
+	  	<div id="newtask">
+	      <div className="formblack">
+	      <div className="formin">
 	      <form className="Taskform" onSubmit={(e)=>this.onsubmit(e)}>
 	      <label htmlFor="task">Task</label>
 	      <input type="text" name="task"  onChange={(e)=>this.taskchange(e)}></input><br/>
-	      <label htmlFor="due">Password</label>
+	      <label htmlFor="due">Date</label>
 	      <input type="date" name="due" onChange={(e)=>this.duechange(e)}></input>
 	      <input type="submit" value="add"></input>
 	      </form>
+	      </div>
 	      </div>
 	      </div>
 	    );

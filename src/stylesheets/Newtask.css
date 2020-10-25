@@ -1,4 +1,31 @@
-.NewTask
+.formin
 {
-	display:none
+	border: 1px solid black;
+	height:50vh;
+	width:40vw;
+	background:orange;
+	backdrop-filter:blur(10px);
+}
+.formblack
+{
+	position: fixed;
+	left:0px;
+	top:0px;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	width:100vw;
+	height:100vh;
+	background:rgba(0,0,0,0.7);
+}
+#newtask,#updatetask
+{
+	display:none;
+}
+@media only screen and (max-width: 600px)
+{
+	.formin
+	{
+		width:80vw;
+	}
 }
