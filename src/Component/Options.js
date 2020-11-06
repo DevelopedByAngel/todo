@@ -8,9 +8,9 @@ const Options=()=>
 
 	return (
 		<div>
-	      <p onClick={()=>deleteTask()} className="eg opt" id="deleteopt">X</p>
-	      <p onClick={()=>editTask()} className="eg opt" id="editopt">✏️</p>
-	      <p onClick={()=>newTask()} className="eg opt" id="newopt">new</p>
+	      <p onClick={()=>deleteTask()} className="eg opt" id="deleteopt"><img src={require('../assets/delete.png')} className="optimg"/></p>
+	      <p onClick={()=>editTask()} className="eg opt" id="editopt"><img src={require('../assets/edit.png')} className="optimg"/></p>
+	      <p onClick={()=>newTask()} className="eg opt" id="newopt"><img src={require('../assets/add.png')} className="optimg"/></p>
 	      
 	      <div className="eg drag" draggable="true" onClick={()=>optionsclick()} onTouchEnd={(e)=>touchend(e)} onTouchMove={(e)=>touchdrag(e)} onDrag={(e)=>drag(e)}  onDragEnd={(e)=>dragend(e)}>
 	      </div>
@@ -34,12 +34,15 @@ const touchdrag=(event)=>
 };
 const drag=(e)=>
 {
+	$('.opt').css("transition-delay","0s");
 	$('.Options').css('animation','unset')
 	$('.eg').css('left',e.clientX-15);
 	$('.eg').css('top',e.clientY-75);
 }
 const dragend=(e)=>
 {
+	$('.opt:nth-child(2)').css("transition-delay","0.1s");
+	$('.opt:nth-child(3)').css("transition-delay","0.2s");
 	$('.Options').css('animation','unset')
 	$('.eg').css('left',e.clientX-15);
 	$('.eg').css('top',e.clientY-75);
@@ -107,20 +110,21 @@ const optionsclick=()=>
 			$('#newopt').css('top',parseInt($('.drag').css('top')))
 		}
 	}
+
 }
 const deleteTask=()=>
 {
-	$('.delete,.edit,#newtask').css('display','none');	
+	$('.delete,.edit,#newtask,#updatetask').css('display','none');	
 	$('.delete').css('display','block');
 }
 const editTask=()=>
 {
-	$('.delete,.edit,#newtask').css('display','none')
+	$('.delete,.edit,#newtask,#updatetask').css('display','none')
 	$('.edit').css('display','block')
 }
 const newTask=()=>
 {
-	$('.delete,.edit,#newtask').css('display','none')
+	$('.delete,.edit,#newtask,#updatetask').css('display','none')
 	$('#newtask').css('display','block')
 }
 export default Options;

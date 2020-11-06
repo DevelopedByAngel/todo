@@ -1,0 +1,37 @@
+.Quote
+{
+ width:100%;
+ border:0px solid transparent;
+ border-bottom-right-radius:10px;	
+ border-bottom-left-radius:10px;
+ padding-top:50px;
+ padding-bottom:20px;
+ background:black;
+ color:white;
+ font-weight: bolder;
+ background:#cc7022;
+}
+.Quote p
+{
+	margin:2px;
+}
+.Quote p:first-child::before
+{
+	content:'"';
+	font-size:xx-large;
+font-family: 'Passion One', cursive;
+display: inline-block;
+transform: rotateY(180deg);
+}
+.Quote p:first-child::after
+{
+	content:'"';
+	font-size:xx-large;
+font-family: 'Passion One', cursive;
+display: inline-block;
+	transform: translateY(-1rem) rotateX(180deg);
+}
+.author
+{
+	text-align:right;
+}

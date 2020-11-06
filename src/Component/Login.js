@@ -7,8 +7,8 @@ class Login extends Component {
 		super(props);
 		this.state=
 		{
-			email:'',
-			password:''
+			email:'angelfrancis1111@gmail.com',
+			password:'angel'
 		}
 	}
 	emailchange=(email)=>
@@ -67,6 +67,10 @@ class Login extends Component {
 	  {
 	  	// console.log(Quotes.length)
 	  	// 
+	  	setTimeout(()=>
+	  	{
+	  		$('#submit').click();
+	  	},1000);
 	  return (
 	      <div className="Login">
 	      <div className="main">

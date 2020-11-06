@@ -36,6 +36,14 @@
 	animation:pulse 1s infinite ease-out;
 	background:#ff963c;
 }
+.Options:nth-child(2)
+{
+	animation-delay:0.2s
+}
+.Options:nth-child(3)
+{
+	animation-delay:0.4s
+}
 @keyframes pulse
 {
 	from { opacity:1;transform:scale(1.5);}
@@ -63,4 +71,11 @@
 	align-items:center;
 	z-index:100;
 	right:2vh;
+	font-weight:bold;
+	color:white;
+}
+.optimg
+{
+	height:80%;
+	
 }

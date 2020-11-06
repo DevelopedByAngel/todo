@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
-import '../stylesheets/Nav.css'
+import '../stylesheets/Nav.css';
+import '../stylesheets/Quote.css'
 const Quotes=require('./quotes.json')
 const Quote=(props)=>
 {
@@ -8,8 +9,8 @@ const Quote=(props)=>
 	const q=Quotes[Math.floor(Math.random()*333)];
 	return (
 	      <div className="Quote">
-	      <p>{q.quoteText}</p>
-	      <p>{q.quoteAuthor}</p>
+	      <p className="quotetext">{q.quoteText}</p>
+	      <p className="author">-{q.quoteAuthor}</p>
 	      </div>
 	    );
 

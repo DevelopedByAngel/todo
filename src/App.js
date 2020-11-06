@@ -26,9 +26,10 @@ class App extends Component {
   }
   updatetask=(task)=>
   {
-    $('.delete,.edit,.NewTask').css('display','none') 
+    
     console.log(task)
     this.setState({task:task})
+    $('.delete,.edit,#newtask,#updatetask').css('display','none');
   }
   deletetask=(data)=>
   {
@@ -51,6 +52,7 @@ class App extends Component {
   }
   updatetaskname=(data)=>
   {
+
     var id=data.id;
     var task=data.task;
     var due=data.due;
@@ -87,6 +89,7 @@ class App extends Component {
   render()
   {
     // console.log(deletetask)
+
   return (
       <div className="App">
       <Button/>

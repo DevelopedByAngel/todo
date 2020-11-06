@@ -10,18 +10,24 @@ const Task=(props)=>
 	date=date.slice(0,10)
 	  return (
 	  	<div className="task" id={"task"+id} onClick={(e)=>click(e)}>
-	      <div className="taskdetails"><p taskid={id} id={"taskname"+id} className="taskname" >{task}</p><span id={"taskdue"+id}>{reverseDate(date)}</span><span onClick={(e)=>deletetask({id})} className="delete">X</span><span onClick={(e)=>updatetaskname(e)} id={id} className="edit">edit</span></div><p class="link"></p>
+	      <div className="taskdetails"><p taskid={id} id={"taskname"+id} className="taskname" >{task}</p><span id={"taskdue"+id}>{reverseDate(date)}</span><span  className="delete"><img src={require('../assets/remove.png')} className="taskoptimg"/></span><span onClick={(e)=>updatetaskname(e)} id={id} className="edit"><img src={require('../assets/edit.png')} className="taskoptimg"/></span></div><p class="link"></p>
 	      </div>
 	    );
   }
 const updatetaskname =(e)=>
 {
+	var a=$(e);
+	console.log($(e.target).attr("class"))
+	if($(e.target).attr("class")=="taskoptimg")
+	{
+		a=$(e.target).parent()
+	}
 	$('#updatetask').css("display", "block");
-	console.log('ok'+$("#taskname"+$(e.target).attr('id')).text())
+	console.log('ok'+$("#taskname"+$(a).attr('id')).text())
 	$('.editing').attr('class','')
-	$(e.target).attr('class','edit editing');
-	$('.tasknameediting').attr('value',$("#taskname"+$(e.target).attr('id')).text())
-	$('.taskdueediting').attr('value',reverseDate($('#taskdue'+$(e.target).attr('id')).text()));
+	$(a).attr('class','edit editing');
+	$('.tasknameediting').attr('value',$("#taskname"+$(a).attr('id')).text())
+	$('.taskdueediting').attr('value',reverseDate($('#taskdue'+$(a).attr('id')).text()));
 }
 
 const click=(e)=>

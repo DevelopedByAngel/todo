@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import '../stylesheets/Newtask.css'
-import $ from 'jquery'
+import $ from 'jquery';
 class Newtask extends Component {
 	constructor(props)
 	{
@@ -49,13 +49,13 @@ class Newtask extends Component {
 	  return (
 	  	<div id="newtask">
 	      <div className="formblack">
-	      <div className="formin">
+	      <div className="formin ">
 	      <form className="Taskform" onSubmit={(e)=>this.onsubmit(e)}>
 	      <label htmlFor="task">Task</label>
 	      <input type="text" name="task"  onChange={(e)=>this.taskchange(e)}></input><br/>
 	      <label htmlFor="due">Date</label>
-	      <input type="date" name="due" onChange={(e)=>this.duechange(e)}></input>
-	      <input type="submit" value="add"></input>
+	      <input type="date" name="due" className="dateinput" onChange={(e)=>this.duechange(e)}></input>
+	      <input type="submit" value="add" id="newtaskbtn" className="submitbtn"></input>
 	      </form>
 	      </div>
 	      </div>

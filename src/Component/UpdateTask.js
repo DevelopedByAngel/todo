@@ -43,7 +43,7 @@ class UpdateTask extends Component {
 	      <input type="text" name="task" className="tasknameediting"  onChange={(e)=>this.taskchange(e)}></input><br/>
 	      <label htmlFor="due">Date</label>
 	      <input type="date" name="due" className="taskdueediting" onChange={(e)=>this.duechange(e)}></input>
-	      <input type="submit" value="Update"></input>
+	      <input type="submit" value="Update" id="updatetaskbtn" className="submitbtn" ></input>
 	      </form>
 	      </div>
 	      </div>
