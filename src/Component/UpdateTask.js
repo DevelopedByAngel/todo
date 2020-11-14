@@ -14,11 +14,14 @@ class UpdateTask extends Component {
 	taskchange=(task)=>
 	{
 		this.setState({task:task.target.value});
+		$('.tasknameediting').attr("task",task.target.value)
+
 	}
 	duechange=(due)=>
 	{
 		console.log(due.target.value)
 		this.setState({due:due.target.value});
+		$('.taskdueediting').attr("due",due.target.value)
 	}
 	onUpdate=(e)=>
 	{
@@ -34,6 +37,8 @@ class UpdateTask extends Component {
 	  render()
 	  {
 	  		console.log(this.props.state)
+	  		$('.tasknameediting').val($('.tasknameediting').attr('task'))
+	  		$('.taskdueediting').val($('.taskdueediting').attr('due'))
 	  return (
 	  	<div id="updatetask">
 	  	<div className="formblack">

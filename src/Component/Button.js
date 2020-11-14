@@ -7,12 +7,14 @@ const Button=(props)=>
 	{
 		if($('.line').css('height')!=='25px')
 		{
+			$('.menubutton').css("box-shadow","2px 2px 10px transparent")
 			$('.line').css({'height':'25px','background':'white'});
 			$('.dot').css('transform','translateY(8px)')
 			$('.Nav').css({'width':'30%'})
 		}
 		else
 		{
+			$('.menubutton').css("box-shadow","2px 2px 10px black")
 			$('.line').css({'height':'5px','background':'white'});
 			$('.dot:nth-child(1)').css('transform','translateY(0px)')
 			$('.dot:nth-child(2)').css('transform','translateY(8px)')

@@ -1,4 +1,49 @@
+
+
+.Quote p:first-child::before
+{
+	content:'"';
+	font-size:xx-large;
+font-family: 'Passion One', cursive;
+display: inline-block;
+}
+.Quote p:first-child::after
+{
+	content:'"';
+	font-size:xx-large;
+font-family: 'Passion One', cursive;
+display: inline-block;
+}
+
+.author
+{
+	text-align:right;
+}
+@media only screen and (min-width: 601px)
+{
+	.Quote p:first-child::after
+{
+
+	transform: scale(10) translate(0px, 10px) rotateX(180deg);
+}
+.Quote p:first-child::before
+{
+
+transform:rotateY(180deg) scale(10)
+}
+.author
+{
+	transform: translate(0px, 35px);
+}
 .Quote
+{
+	transform: translate(0px, 145px);
+	font-weight: bolder;
+}
+}
+@media only screen and (max-width: 600px)
+{
+	.Quote
 {
  width:100%;
  border:0px solid transparent;
@@ -10,6 +55,7 @@
  color:white;
  font-weight: bolder;
  background:#cc7022;
+ margin-bottom:20px;
 }
 .Quote p
 {
@@ -17,21 +63,6 @@
 }
 .Quote p:first-child::before
 {
-	content:'"';
-	font-size:xx-large;
-font-family: 'Passion One', cursive;
-display: inline-block;
 transform: rotateY(180deg);
 }
-.Quote p:first-child::after
-{
-	content:'"';
-	font-size:xx-large;
-font-family: 'Passion One', cursive;
-display: inline-block;
-	transform: translateY(-1rem) rotateX(180deg);
-}
-.author
-{
-	text-align:right;
 }

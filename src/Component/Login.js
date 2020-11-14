@@ -7,8 +7,8 @@ class Login extends Component {
 		super(props);
 		this.state=
 		{
-			email:'angelfrancis1111@gmail.com',
-			password:'angel'
+			email:'',
+			password:''
 		}
 	}
 	emailchange=(email)=>
@@ -28,8 +28,6 @@ class Login extends Component {
 			$('.round').css('display','flex');
 		},1000);
 		
-		
-		setTimeout(()=>{
 			fetch('http://localhost:3000/login',{
 					method:'POST',
 					headers:{'Content-Type':'application/json'},
@@ -55,22 +53,20 @@ class Login extends Component {
 					{
 						console.log(task);
 						this.props.updatetask(task);
-						this.props.route('task')
+						setTimeout(()=>{
+						this.props.route("task");
+						this.props.route("task");
+						},2500)
 					})
 					.catch(err=>Error(err.message));
 				})
 				.catch(err=>alert(err))
-			},2500)
+			
 	}
 
 	  render()
 	  {
-	  	// console.log(Quotes.length)
-	  	// 
-	  	setTimeout(()=>
-	  	{
-	  		$('#submit').click();
-	  	},1000);
+	  	
 	  return (
 	      <div className="Login">
 	      <div className="main">

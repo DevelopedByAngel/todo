@@ -31,6 +31,15 @@
 	bottom:2vw;
 	right:2vh;
 }
+.drag
+{
+	box-shadow:0px 0px 15px white;
+}
+.drag:active
+{
+	transform:rotateZ(130deg) scale(1.1);
+}
+
 .Options
 {
 	animation:pulse 1s infinite ease-out;

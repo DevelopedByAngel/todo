@@ -33,7 +33,8 @@ class App extends Component {
   }
   deletetask=(data)=>
   {
-    var id=data.id;
+    console.log(data);
+    var id=data;
     fetch('http://localhost:3000/delete',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
@@ -84,7 +85,10 @@ class App extends Component {
       this.setState({route:'signup'})
     else if(route=='task')
       this.setState({route:'task'})
-
+  }
+  rerender=()=> {
+    console.log("re-rendering............")
+    this.updateuser(this.state.user)
   }
   render()
   {
@@ -101,7 +105,7 @@ class App extends Component {
         :<div className="taskpage">
         <Quote/>
         <div className="TaskList">
-        <TaskList tasklist={this.state.task} deletetask={this.deletetask} />
+        <TaskList tasklist={this.state.task} deletetask={this.deletetask} rerender={this.rerender}/>
         <Options/></div>
         <Newtask state={this.state} updatetask={this.updatetask}/>
         <UpdateTask state={this.state} updatetaskname={this.updatetaskname}/>

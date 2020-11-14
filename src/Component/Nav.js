@@ -5,17 +5,20 @@ const Nav=(props)=>
 {
 	const {route,now}=props;
 	console.log(now,"now")
+	if(now=='task')
+		$('.signout').css('display', 'block')
+	else
+		$('.signout').css('display','none')
+	$('.nav-link').attr('id','')
+	if(now!=='task')
+		$('.'+now).attr('id','disabled')
+		
 	const changeroute=(r)=>
 	{
 		if($(window).width()<600)
 			$('.menubutton').click();
 		console.log(r,now)
-		$('*').attr('id','')
-		$('.'+now).attr('id','disabled')
-		if(now==='task')
-		$('.signout').css('display', 'block')
-		else
-		$('.signout').css('display','none')
+		
 		if(r!==now)
 		route(r)
 	}

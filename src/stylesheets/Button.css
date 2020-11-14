@@ -6,9 +6,10 @@
 	border-radius:50%;
 	outline:none;
 	border-color:transparent;
-	background:transparent;
-	z-index:3;
+    background: #63584f6b;
+    	z-index:3;
     padding: 14px;
+        box-shadow: 2px 2px 10px black;
 }
 .menu
 {
