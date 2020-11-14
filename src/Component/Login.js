@@ -22,13 +22,9 @@ class Login extends Component {
 	onsubmit=(e)=>
 	{
 		e.preventDefault();
-		$('form').css('height','0%')
-		setTimeout(()=>{
-			$('form').css('display','none')
-			$('.round').css('display','flex');
-		},1000);
 		
-			fetch('http://localhost:3000/login',{
+		
+			fetch('https://todo-appapi.herokuapp.com/login',{
 					method:'POST',
 					headers:{'Content-Type':'application/json'},
 					body:JSON.stringify({
@@ -39,9 +35,16 @@ class Login extends Component {
 				.then(res=>res.json())
 				.then(user=>
 				{
+					if(user.id)
+					{
+					$('form').css('height','0%')
+					setTimeout(()=>{
+						$('form').css('display','none')
+						$('.round').css('display','flex');
+					},1000);
 					console.log(user.id);
 					this.props.updateuser(user);
-					fetch('http://localhost:3000/tasks',{
+					fetch('https://todo-appapi.herokuapp.com/tasks',{
 					method:'POST',
 					headers:{'Content-Type':'application/json'},
 					body:JSON.stringify({
@@ -56,10 +59,19 @@ class Login extends Component {
 						setTimeout(()=>{
 						this.props.route("task");
 						this.props.route("task");
+						if(task.severity=="ERROR")
+						{
+							alert(task.details)
+						}
 						},2500)
 					})
 					.catch(err=>Error(err.message));
-				})
+				}
+				if(user.severity=="ERROR")
+						{
+							alert(user.details)
+						}
+			})
 				.catch(err=>alert(err))
 			
 	}

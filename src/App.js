@@ -35,7 +35,7 @@ class App extends Component {
   {
     console.log(data);
     var id=data;
-    fetch('http://localhost:3000/delete',{
+    fetch('https://todo-appapi.herokuapp.com/delete',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
@@ -57,7 +57,7 @@ class App extends Component {
     var id=data.id;
     var task=data.task;
     var due=data.due;
-    fetch('http://localhost:3000/update',{
+    fetch('https://todo-appapi.herokuapp.com/update',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({

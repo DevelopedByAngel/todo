@@ -22,7 +22,7 @@ class Signup extends Component {
 	onsubmit=(e)=>
 	{
 		e.preventDefault();
-		fetch('http://localhost:3000/register',{
+		fetch('https://todo-appapi.herokuapp.com/register',{
 			method:'POST',
 			headers:{'Content-Type':'application/json'},
 			body:JSON.stringify({
@@ -34,12 +34,19 @@ class Signup extends Component {
 		.then(res=>res.json())
 		.then(user=>
 		{
-			console.log(user.id);
+			console.log(user);
 			if(user.id)
 			{
 				this.props.updateuser(user);
 				this.props.updatetask([]);
 				this.props.route('task')
+			}
+			if(user.severity=="ERROR")
+			{
+				var error;
+				if(user.code=="23505")
+					error="Email already registered .Try to login"
+				alert(error)
 			}
 		})
 		.catch(err=>alert(err))
