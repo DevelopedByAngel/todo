@@ -16,6 +16,14 @@
 	font-size:larger;
 	text-transform:capitalize;
 }
+.task input.check
+{
+	position: absolute;
+    right: 1%;
+    top: 1%;
+    height: 25px;
+    width: 25px;
+}
 .taskname
 {
 	margin:0px;

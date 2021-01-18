@@ -105,7 +105,7 @@ class App extends Component {
                 tasklist={this.state.task}
                 deletetask={this.deletetask}
                 rerender={this.rerender}
-                update={this.updatetaskname}
+                updatetaskname={this.updatetaskname}
               />
               <Options />
             </div>
