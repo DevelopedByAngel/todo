@@ -45,6 +45,7 @@ class App extends Component {
       .catch((err) => alert(err));
   };
   updatetaskname = (data) => {
+    console.log(data);
     var id = data.id;
     var task = data.task;
     var due = data.due;

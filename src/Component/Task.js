@@ -2,13 +2,14 @@ import React from "react";
 import "../stylesheets/Task.css";
 import $ from "jquery";
 const Task = (props) => {
-	const { task, id, due, deletetask, rerender } = props;
+	const { task, id, due, deletetask,updatetask, rerender } = props;
 	console.log("due" + due);
 	var date = "" + due;
 	date = date.slice(0, 10);
 	return (
 		<div className="task" id={"task" + id} onClick={(e) => click(e)}>
 			<div className="taskdetails">
+			<input type="checkbox" className="check" onClick={()=>checktask(id,task,due,updatetask)}/>
 				<p taskid={id} id={"taskname" + id} className="taskname">
 					{task}
 				</p>
@@ -34,6 +35,24 @@ const Task = (props) => {
 		</div>
 	);
 };
+const checktask = (id,task,due,updatetask) =>
+{
+	if(document.querySelector("#task"+id).querySelector(".check").checked)
+	{
+		var done=true;
+	}
+	else
+	{
+		var done=false;
+	}
+	var task={
+		id:id,
+		task:task,
+		due:due,
+		done:done
+	}
+	updatetask(task)
+}
 const updatetaskname = (e, rerender) => {
 	var a = $(e);
 	rerender();
