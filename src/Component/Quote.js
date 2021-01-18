@@ -5,8 +5,10 @@ import '../stylesheets/Quote.css'
 const Quotes=require('./quotes.json')
 const Quote=(props)=>
 {
+	const {quote}=props;
 	console.log(Quotes[Math.floor(Math.random()*333)]);
-	const q=Quotes[Math.floor(Math.random()*333)];
+	const a=Quotes[Math.floor(Math.random()*333)];
+	const q=quote
 	return (
 	      <div className="Quote">
 	      <p className="quotetext">{q.quoteText}</p>

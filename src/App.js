@@ -10,6 +10,8 @@ import Quote from "./Component/Quote";
 import Options from "./Component/Options";
 import "./App.css";
 import $ from "jquery";
+const Quotes=require('./Component/quotes.json')
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +19,7 @@ class App extends Component {
       route: "login",
       task: [],
       user: {},
+      quote:""
     };
   }
   updateuser = (user) => {
@@ -72,7 +75,12 @@ class App extends Component {
   RouteChange = (route) => {
     if (route == "login") this.setState({ route: "login" });
     else if (route == "signup") this.setState({ route: "signup" });
-    else if (route == "task") this.setState({ route: "task" });
+    else if (route == "task") 
+      {
+        this.setState({ route: "task" });
+        const q=Quotes[Math.floor(Math.random()*333)];
+         this.setState({quote:q})
+       }
   };
   rerender = () => {
     console.log("re-rendering............");
@@ -99,7 +107,7 @@ class App extends Component {
           />
         ) : (
           <div className="taskpage">
-            <Quote />
+            <Quote quote={this.state.quote}/>
             <div className="TaskList">
               <TaskList
                 tasklist={this.state.task}
