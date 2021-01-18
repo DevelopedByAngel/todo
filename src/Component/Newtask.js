@@ -24,7 +24,7 @@ class Newtask extends Component {
 	{
 		console.log('ok')
 		e.preventDefault();
-		fetch('http://localhost:3000/add',{
+		fetch('https://todo-appapi.herokuapp.com/add',{
 			method:'POST',
 			headers:{'Content-Type':'application/json'},
 			body:JSON.stringify({

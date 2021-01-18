@@ -24,7 +24,7 @@ const Nav=(props)=>
 	}
 	return (
 	      <div className="Nav">
-	      <p className='nav-link login' onClick={()=>changeroute('login')}>Lgin</p>
+	      <p className='nav-link login' onClick={()=>changeroute('login')}>Login</p>
 	      <p className='nav-link signup' onClick={()=>changeroute('signup')}>SignUp</p>
 	      <p className='nav-link signout' onClick={()=>changeroute('login')}>Sign Out</p>
 	      <a className='nav-link contact' href="mailto:angelfrancis1111@gmail.com">Contact</a>
