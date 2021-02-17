@@ -38,6 +38,8 @@ class Newtask extends Component {
 		{
 			console.log(task.id);
 			$('#newtask').css('display','none');
+			$('#newtask .nameinput').attr('value',"");
+			$('#newtask .dateinput').attr('value',"");
 			this.props.updatetask(task);
 			
 		})
@@ -52,7 +54,7 @@ class Newtask extends Component {
 	      <div className="formin ">
 	      <form className="Taskform" onSubmit={(e)=>this.onsubmit(e)}>
 	      <label htmlFor="task">Task</label>
-	      <input type="text" name="task"  onChange={(e)=>this.taskchange(e)}></input><br/>
+	      <input type="text" name="task" className="nameinput"  onChange={(e)=>this.taskchange(e)}></input><br/>
 	      <label htmlFor="due">Date</label>
 	      <input type="date" name="due" className="dateinput" onChange={(e)=>this.duechange(e)}></input>
 	      <input type="submit" value="add" id="newtaskbtn" className="submitbtn"></input>

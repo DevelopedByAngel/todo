@@ -72,6 +72,28 @@ class App extends Component {
       })
       .catch((err) => alert(err));
   };
+  /*
+  *
+  *
+  *
+  *
+  *
+  *
+  *
+  *
+  *
+
+  add delete and edit in task .
+  add new task as the first task
+  in settins => change dark mode,, sorting ,, change size
+  *
+  *
+  *
+  *
+  *
+  *
+  *** ************
+  ****************************************************************/
   RouteChange = (route) => {
     if (route == "login") this.setState({ route: "login" });
     else if (route == "signup") this.setState({ route: "signup" });
