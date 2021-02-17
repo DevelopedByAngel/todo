@@ -1,6 +1,8 @@
 import React from "react";
 import "../stylesheets/Task.css";
 import $ from "jquery";
+import {CgClose} from "react-icons/cg"
+import {AiFillEdit} from "react-icons/ai"
 const Task = (props) => {
 	const { task, id, due,done, deletetask,updatetask, rerender } = props;
 	console.log("due" + due);
@@ -15,20 +17,14 @@ const Task = (props) => {
 				</p>
 				<span id={"taskdue" + id}>{reverseDate(date)}</span>
 				<span onClick={(e) => deletetask(id)} className="delete">
-					<img
-						src={require("../assets/remove.png")}
-						className="taskoptimg"
-					/>
+					<CgClose/>
 				</span>
 				<span
 					onClick={(e) => updatetaskname(e, rerender)}
 					id={id}
 					className="edit"
 				>
-					<img
-						src={require("../assets/edit.png")}
-						className="taskoptimg"
-					/>
+					<AiFillEdit/>
 				</span>
 			</div>
 			<p class="link"></p>

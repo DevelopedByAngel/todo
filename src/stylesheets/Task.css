@@ -19,7 +19,7 @@
 .task input.check
 {
 	position: absolute;
-    right: 1%;
+    left: 1%;
     top: 1%;
     height: 25px;
     width: 25px;
@@ -57,7 +57,6 @@
 }
 .delete
 {
-	display:none;
 }
 .task:last-child
 {
@@ -82,4 +81,11 @@
 }
 .delete,.edit
 {
+	position:absolute;
+	right:1%;
+	top:1%;
+}
+.edit
+{
+	top:3%;
 }
