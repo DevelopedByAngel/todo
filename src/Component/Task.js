@@ -26,7 +26,7 @@ const Task = (props) => {
 					id={id}
 					className="edit"
 				>
-					<AiFillEdit/>
+					<AiFillEdit className="taskoptimg"/>
 				</span>
 				</div>
 			</div>
@@ -55,12 +55,13 @@ const checktask = (id,task,due,updatetask) =>
 }
 const updatetaskname = (e, rerender) => {
 	var a = $(e);
-	console.log(a)
+	console.log($(a).attr('class'))
 	// rerender();
-	console.log($(e).attr("class"));
+	console.log($(e.target).attr("class"));
 	if ($(e.target).attr("class") == "taskoptimg") {
 		a = $(e.target).parent();
 	}
+	console.log(a,$(a))
 	$("#updatetask").css("display", "block");
 	console.log("ok" + $("#taskname" + $(a).attr("id")).text());
 	$(".editing").attr("class", "");
