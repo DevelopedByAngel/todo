@@ -19,7 +19,8 @@ class App extends Component {
       route: "login",
       task: [],
       user: {},
-      quote:""
+      quote:"",
+      sort:"date"
     };
   }
   updateuser = (user) => {
@@ -72,6 +73,11 @@ class App extends Component {
       })
       .catch((err) => alert(err));
   };
+  sort=(type)=>
+  {
+    if(this.state.sort!=type)
+    this.setState({sort: type});
+  }
   /*
   *
   *
@@ -133,13 +139,14 @@ class App extends Component {
             <div className="TaskList">
             <Newtask state={this.state} updatetask={this.updatetask} />
               <TaskList
+                sort={this.state.sort}
                 tasklist={this.state.task}
                 deletetask={this.deletetask}
                 rerender={this.rerender}
                 updatetaskname={this.updatetaskname}
               />
               
-              <Options />
+              <Options sort={this.sort}/>
             </div>
             <UpdateTask
               state={this.state}

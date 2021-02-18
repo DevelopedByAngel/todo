@@ -1,4 +1,4 @@
-.task
+.task,.newtask
 {
 	width:30vw;
 	height:30vh;
@@ -96,5 +96,6 @@
 	flex-direction:column;
 	position: absolute;
 	right:1%;
+	font-size: medium;
 	top:1%;
 }

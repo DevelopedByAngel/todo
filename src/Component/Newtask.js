@@ -37,7 +37,7 @@ class Newtask extends Component {
 		.then(task=>
 		{
 			console.log(task.id);
-			$('#newtask').css('display','none');
+			$("#newtask").css("display","block")
 			$('#newtask .nameinput').attr('value',"");
 			$('#newtask .dateinput').attr('value',"");
 			this.props.updatetask(task);
@@ -49,7 +49,7 @@ class Newtask extends Component {
 	  {
 	  		console.log(this.props.state)
 	  return (
-	  	<div className="task newtask" id={"task" + 100} onclick={()=>{$('.task').attr('class','task');$('.newtask').attr('class','tasknow task newtask');}}>
+	  	<div className="newtask" id="newtask" onClick={()=>{console.log("ok");$('.task').attr('class','task');$('.newtask').attr('class','newtask tasknow');}}>
 	  	<form className="Taskform taskdetails" onSubmit={(e)=>this.onsubmit(e)}>
 	      <input type="text" name="task" className="nameinput"  onChange={(e)=>this.taskchange(e)}></input><br/>
 	      <input type="date" name="due" className="dateinput" onChange={(e)=>this.duechange(e)}></input>

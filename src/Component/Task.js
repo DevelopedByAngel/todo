@@ -55,8 +55,9 @@ const checktask = (id,task,due,updatetask) =>
 }
 const updatetaskname = (e, rerender) => {
 	var a = $(e);
-	rerender();
-	console.log($(e.target).attr("class"));
+	console.log(a)
+	// rerender();
+	console.log($(e).attr("class"));
 	if ($(e.target).attr("class") == "taskoptimg") {
 		a = $(e.target).parent();
 	}
@@ -73,19 +74,19 @@ const updatetaskname = (e, rerender) => {
 
 const click = (e) => {
 	if ($(e.target).attr("class") == "task") {
+		$(".newtask").attr("class", "newtask");
 		$(".task").attr("class", "task");
-		$(".newtask").attr("class", "task newtask");
 		$(e.target).attr("class", "task tasknow");
 	}
 	if ($(".delete").css("display") == "none") {
 		if ($(e.target).parent().attr("class") == "task") {
 			$(".task").attr("class", "task");
-		$(".newtask").attr("class", "task newtask");
+		$(".newtask").attr("class", "newtask");
 
 			$(e.target).parent().attr("class", "task tasknow");
 		} else if ($(e.target).parent().parent().attr("class") == "task") {
 			$(".task").attr("class", "task");
-		$(".newtask").attr("class", "task newtask");
+		$(".newtask").attr("class", "newtask");
 
 			$(e.target).parent().parent().attr("class", "task tasknow");
 		}

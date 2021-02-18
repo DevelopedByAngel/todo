@@ -34,6 +34,11 @@ class UpdateTask extends Component {
 		}
 		this.props.updatetaskname(data)
 	}
+	click(e)
+	{
+		if($(e.target).attr("class")=="formblack")
+			$('#updatetask').hide();
+	}
 	  render()
 	  {
 	  		console.log(this.props.state)
@@ -41,7 +46,7 @@ class UpdateTask extends Component {
 	  		$('.taskdueediting').val($('.taskdueediting').attr('due'))
 	  return (
 	  	<div id="updatetask">
-	  	<div className="formblack">
+	  	<div className="formblack" onClick={(e)=>this.click(e)}>
 	      <div className="formin" >
 	      <form className="Taskform" onSubmit={(e)=>this.onUpdate(e)}>
 	      <label htmlFor="task">Task</label>

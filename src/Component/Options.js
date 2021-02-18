@@ -2,17 +2,22 @@ import React from "react";
 import $ from "jquery";
 import "../stylesheets/Nav.css";
 import "../stylesheets/Options.css";
-const Options = () => {
+import {BiSortAZ} from "react-icons/bi";
+import {FaSortNumericDownAlt} from "react-icons/fa"
+import {AiFillSetting} from "react-icons/ai"
+import {MdFormatSize} from "react-icons/md"
+const Options = (props) => {
+	const {sort} =props
 	return (
 		<div>
-			<p  className="eg opt" id="deleteopt">
-				<img src={require("../assets/delete.png")} className="optimg" />
+			<p onClick={()=>sort("name")}  className="eg opt" id="namesortopt">
+				<BiSortAZ className="optimg" />
 			</p>
-			<p  className="eg opt" id="editopt">
-				<img src={require("../assets/edit.png")} className="optimg" />
+			<p  onClick={()=>sort("date")} className="eg opt" id="datesortopt">
+				<FaSortNumericDownAlt className="optimg" />
 			</p>
-			<p  className="eg opt" id="newopt">
-				<img src={require("../assets/add.png")} className="optimg" />
+			<p  onClick={()=>size()} className="eg opt" id="sizeopt">
+				<MdFormatSize className="optimg" />
 			</p>
 			<div
 				className="eg drag"
@@ -22,11 +27,19 @@ const Options = () => {
 				onTouchMove={(e) => touchdrag(e)}
 				onDrag={(e) => drag(e)}
 				onDragEnd={(e) => dragend(e)}
-			></div>
+			><AiFillSetting/></div>
 		</div>
 	);
 };
 $(".tooltip").css("left", "");
+const size=()=>
+{
+	console.log("size change",$('.task').css("font-size"))
+	if($('.task').css("font-size")=="19.2px")
+		$('.task').css("font-size","xx-large");
+	else
+		$('.task').css("font-size","larger");
+}
 const touchend = (e) => {
 	$(".Options").css("animation", "unset");
 	$("body").css("overflow", "scroll");
@@ -57,89 +70,89 @@ const optionsclick = () => {
 		parseInt($(".drag").css("left")) < $(window).width() / 2 &&
 		parseInt($(".drag").css("top")) < $(window).height() / 2
 	) {
-		if ($(".drag").css("left") === $("#deleteopt").css("left")) {
-			$("#deleteopt").css(
+		if ($(".drag").css("left") === $("#namesortopt").css("left")) {
+			$("#namesortopt").css(
 				"left",
-				parseInt($("#deleteopt").css("left")) + 70
+				parseInt($("#namesortopt").css("left")) + 70
 			);
-			$("#editopt").css({
-				left: parseInt($("#editopt").css("left")) + 50,
-				top: parseInt($("#editopt").css("top")) + 50,
+			$("#datesortopt").css({
+				left: parseInt($("#datesortopt").css("left")) + 50,
+				top: parseInt($("#datesortopt").css("top")) + 50,
 			});
-			$("#newopt").css("top", parseInt($("#newopt").css("top")) + 70);
+			$("#sizeopt").css("top", parseInt($("#sizeopt").css("top")) + 70);
 		} else {
-			$("#deleteopt").css("left", parseInt($(".drag").css("left")));
-			$("#editopt").css({
+			$("#namesortopt").css("left", parseInt($(".drag").css("left")));
+			$("#datesortopt").css({
 				left: parseInt($(".drag").css("left")),
 				top: parseInt($(".drag").css("top")),
 			});
-			$("#newopt").css("top", parseInt($(".drag").css("top")));
+			$("#sizeopt").css("top", parseInt($(".drag").css("top")));
 		}
 	} else if (
 		parseInt($(".drag").css("left")) > $(window).width() / 2 &&
 		parseInt($(".drag").css("top")) < $(window).height() / 2
 	) {
-		if ($(".drag").css("left") === $("#deleteopt").css("left")) {
-			$("#deleteopt").css(
+		if ($(".drag").css("left") === $("#namesortopt").css("left")) {
+			$("#namesortopt").css(
 				"left",
-				parseInt($("#deleteopt").css("left")) - 70
+				parseInt($("#namesortopt").css("left")) - 70
 			);
-			$("#editopt").css({
-				left: parseInt($("#editopt").css("left")) - 50,
-				top: parseInt($("#editopt").css("top")) + 50,
+			$("#datesortopt").css({
+				left: parseInt($("#datesortopt").css("left")) - 50,
+				top: parseInt($("#datesortopt").css("top")) + 50,
 			});
-			$("#newopt").css("top", parseInt($("#newopt").css("top")) + 70);
+			$("#sizeopt").css("top", parseInt($("#sizeopt").css("top")) + 70);
 		} else {
-			$("#deleteopt").css("left", parseInt($(".drag").css("left")));
-			$("#editopt").css({
+			$("#namesortopt").css("left", parseInt($(".drag").css("left")));
+			$("#datesortopt").css({
 				left: parseInt($(".drag").css("left")),
 				top: parseInt($(".drag").css("top")),
 			});
-			$("#newopt").css("top", parseInt($(".drag").css("top")));
+			$("#sizeopt").css("top", parseInt($(".drag").css("top")));
 		}
 	} else if (
 		parseInt($(".drag").css("left")) < $(window).width() / 2 &&
 		parseInt($(".drag").css("top")) > $(window).height() / 2
 	) {
-		if ($(".drag").css("left") === $("#deleteopt").css("left")) {
-			$("#deleteopt").css(
+		if ($(".drag").css("left") === $("#namesortopt").css("left")) {
+			$("#namesortopt").css(
 				"left",
-				parseInt($("#deleteopt").css("left")) + 70
+				parseInt($("#namesortopt").css("left")) + 70
 			);
-			$("#editopt").css({
-				left: parseInt($("#editopt").css("left")) + 50,
-				top: parseInt($("#editopt").css("top")) - 50,
+			$("#datesortopt").css({
+				left: parseInt($("#datesortopt").css("left")) + 50,
+				top: parseInt($("#datesortopt").css("top")) - 50,
 			});
-			$("#newopt").css("top", parseInt($("#newopt").css("top")) - 70);
+			$("#sizeopt").css("top", parseInt($("#sizeopt").css("top")) - 70);
 		} else {
-			$("#deleteopt").css("left", parseInt($(".drag").css("left")));
-			$("#editopt").css({
+			$("#namesortopt").css("left", parseInt($(".drag").css("left")));
+			$("#datesortopt").css({
 				left: parseInt($(".drag").css("left")),
 				top: parseInt($(".drag").css("top")),
 			});
-			$("#newopt").css("top", parseInt($(".drag").css("top")));
+			$("#sizeopt").css("top", parseInt($(".drag").css("top")));
 		}
 	} else if (
 		parseInt($(".drag").css("left")) > $(window).width() / 2 &&
 		parseInt($(".drag").css("top")) > $(window).height() / 2
 	) {
-		if ($(".drag").css("left") === $("#deleteopt").css("left")) {
-			$("#deleteopt").css(
+		if ($(".drag").css("left") === $("#namesortopt").css("left")) {
+			$("#namesortopt").css(
 				"left",
-				parseInt($("#deleteopt").css("left")) - 70
+				parseInt($("#namesortopt").css("left")) - 70
 			);
-			$("#editopt").css({
-				left: parseInt($("#editopt").css("left")) - 50,
-				top: parseInt($("#editopt").css("top")) - 50,
+			$("#datesortopt").css({
+				left: parseInt($("#datesortopt").css("left")) - 50,
+				top: parseInt($("#datesortopt").css("top")) - 50,
 			});
-			$("#newopt").css("top", parseInt($("#newopt").css("top")) - 70);
+			$("#sizeopt").css("top", parseInt($("#sizeopt").css("top")) - 70);
 		} else {
-			$("#deleteopt").css("left", parseInt($(".drag").css("left")));
-			$("#editopt").css({
+			$("#namesortopt").css("left", parseInt($(".drag").css("left")));
+			$("#datesortopt").css({
 				left: parseInt($(".drag").css("left")),
 				top: parseInt($(".drag").css("top")),
 			});
-			$("#newopt").css("top", parseInt($(".drag").css("top")));
+			$("#sizeopt").css("top", parseInt($(".drag").css("top")));
 		}
 	}
 };
