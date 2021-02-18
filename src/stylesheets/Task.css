@@ -81,11 +81,20 @@
 }
 .delete,.edit
 {
-	position:absolute;
+	/*position:absolute;*/
 	right:1%;
 	top:1%;
 }
 .edit
 {
 	top:3%;
+}
+.flex-options
+{
+	display: flex;
+	justify-content: center;
+	flex-direction:column;
+	position: absolute;
+	right:1%;
+	top:1%;
 }

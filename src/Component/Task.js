@@ -16,7 +16,9 @@ const Task = (props) => {
 					{task}
 				</p>
 				<span id={"taskdue" + id}>{reverseDate(date)}</span>
-				<span onClick={(e) => deletetask(id)} className="delete">
+								<div className="flex-options">
+
+				<span onClick={(e) =>{ $('#task'+id).hide();deletetask(id)}} className="delete">
 					<CgClose/>
 				</span>
 				<span
@@ -26,6 +28,7 @@ const Task = (props) => {
 				>
 					<AiFillEdit/>
 				</span>
+				</div>
 			</div>
 			<p class="link"></p>
 		</div>
