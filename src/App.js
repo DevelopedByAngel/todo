@@ -131,13 +131,14 @@ class App extends Component {
           <div className="taskpage">
             <Quote quote={this.state.quote}/>
             <div className="TaskList">
+            <Newtask state={this.state} updatetask={this.updatetask} />
               <TaskList
                 tasklist={this.state.task}
                 deletetask={this.deletetask}
                 rerender={this.rerender}
                 updatetaskname={this.updatetaskname}
               />
-              <Newtask state={this.state} updatetask={this.updatetask} />
+              
               <Options />
             </div>
             <UpdateTask

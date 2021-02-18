@@ -74,14 +74,19 @@ const updatetaskname = (e, rerender) => {
 const click = (e) => {
 	if ($(e.target).attr("class") == "task") {
 		$(".task").attr("class", "task");
+		$(".newtask").attr("class", "task newtask");
 		$(e.target).attr("class", "task tasknow");
 	}
 	if ($(".delete").css("display") == "none") {
 		if ($(e.target).parent().attr("class") == "task") {
 			$(".task").attr("class", "task");
+		$(".newtask").attr("class", "task newtask");
+
 			$(e.target).parent().attr("class", "task tasknow");
 		} else if ($(e.target).parent().parent().attr("class") == "task") {
 			$(".task").attr("class", "task");
+		$(".newtask").attr("class", "task newtask");
+
 			$(e.target).parent().parent().attr("class", "task tasknow");
 		}
 	}

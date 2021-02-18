@@ -49,15 +49,12 @@ class Newtask extends Component {
 	  {
 	  		console.log(this.props.state)
 	  return (
-	  	<div className="task" id={"task" + 100} >
+	  	<div className="task newtask" id={"task" + 100} onclick={()=>{$('.task').attr('class','task');$('.newtask').attr('class','tasknow task newtask');}}>
 	  	<form className="Taskform taskdetails" onSubmit={(e)=>this.onsubmit(e)}>
 	      <input type="text" name="task" className="nameinput"  onChange={(e)=>this.taskchange(e)}></input><br/>
-	      <label htmlFor="due">Date</label>
 	      <input type="date" name="due" className="dateinput" onChange={(e)=>this.duechange(e)}></input>
 	      <input type="submit" value="add" id="newtaskbtn" className="submitbtn"></input>
 	      </form>
-				
-
 			<p class="link"></p>
 		</div>
 	  	
