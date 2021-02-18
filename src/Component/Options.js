@@ -5,13 +5,13 @@ import "../stylesheets/Options.css";
 const Options = () => {
 	return (
 		<div>
-			<p onClick={() => deleteTask()} className="eg opt" id="deleteopt">
+			<p  className="eg opt" id="deleteopt">
 				<img src={require("../assets/delete.png")} className="optimg" />
 			</p>
-			<p onClick={() => editTask()} className="eg opt" id="editopt">
+			<p  className="eg opt" id="editopt">
 				<img src={require("../assets/edit.png")} className="optimg" />
 			</p>
-			<p onClick={() => newTask()} className="eg opt" id="newopt">
+			<p  className="eg opt" id="newopt">
 				<img src={require("../assets/add.png")} className="optimg" />
 			</p>
 			<div

@@ -137,9 +137,9 @@ class App extends Component {
                 rerender={this.rerender}
                 updatetaskname={this.updatetaskname}
               />
+              <Newtask state={this.state} updatetask={this.updatetask} />
               <Options />
             </div>
-            <Newtask state={this.state} updatetask={this.updatetask} />
             <UpdateTask
               state={this.state}
               updatetaskname={this.updatetaskname}

@@ -49,19 +49,18 @@ class Newtask extends Component {
 	  {
 	  		console.log(this.props.state)
 	  return (
-	  	<div id="newtask">
-	      <div className="formblack">
-	      <div className="formin ">
-	      <form className="Taskform" onSubmit={(e)=>this.onsubmit(e)}>
-	      <label htmlFor="task">Task</label>
+	  	<div className="task" id={"task" + 100} >
+	  	<form className="Taskform taskdetails" onSubmit={(e)=>this.onsubmit(e)}>
 	      <input type="text" name="task" className="nameinput"  onChange={(e)=>this.taskchange(e)}></input><br/>
 	      <label htmlFor="due">Date</label>
 	      <input type="date" name="due" className="dateinput" onChange={(e)=>this.duechange(e)}></input>
 	      <input type="submit" value="add" id="newtaskbtn" className="submitbtn"></input>
 	      </form>
-	      </div>
-	      </div>
-	      </div>
+				
+
+			<p class="link"></p>
+		</div>
+	  	
 	    );
   }
 }

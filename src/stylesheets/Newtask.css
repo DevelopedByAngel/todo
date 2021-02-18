@@ -1,6 +1,6 @@
 .formin
 {
-	border: 5px solid white;
+    border: 5px solid white;
     height: 50vh;
     width: 40vw;
     background: orange;
@@ -16,28 +16,28 @@
 
 .formblack
 {
-	position: fixed;
-	left:0px;
-	top:0px;
-	display: flex;
-	justify-content:center;
-	align-items:center;
-	width:100vw;
-	height:100vh;
-	background:rgba(0,0,0,0.7);
+    position: fixed;
+    left:0px;
+    top:0px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.7);
 }
 .Taskform
 {
-	z-index:3;
-	align-items:flex-start;
+    z-index:3;
+    align-items:flex-start;
 }
-#newtask,#updatetask
+#updatetask
 {
-	display:none;
+    display:none;
 }
 input[name="task"]
 {
-	    width: 90%;
+        width: 90%;
     background: transparent;
     border: none;
     border-bottom: 2px solid white;
@@ -45,7 +45,7 @@ input[name="task"]
 }
 input[type="date"]
 {
-	
+    
     border: 0px;
     background: transparent;
     color: white;
@@ -54,7 +54,7 @@ input[type="date"]
 }
 .submitbtn
 {
-	width: 30%;
+    width: 30%;
     height: 10%;
     border: 0px solid transparent;
     border-bottom-left-radius: 12px;
@@ -67,8 +67,8 @@ input[type="date"]
 }
 @media only screen and (max-width: 600px)
 {
-	.formin
-	{
-		width:80vw;
-	}
+    .formin
+    {
+        width:80vw;
+    }
 }
