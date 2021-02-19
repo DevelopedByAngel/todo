@@ -7,8 +7,8 @@ class UpdateTask extends Component {
 		super(props);
 		this.state=
 		{
-			task:$('.tasknameediting').val(),
-			due:$('.taskdueediting').val()
+			task:"",
+			due:""
 		}
 	}
 	taskchange=(task)=>
@@ -31,8 +31,8 @@ class UpdateTask extends Component {
 		e.preventDefault();
 		var data={
 			id:$('.editing').attr('id'),
-			task:this.state.task,
-			due:this.state.due
+			task:$('.tasknameediting').val(),
+			due:$('.taskdueediting').val()
 		}
 		this.props.updatetaskname(data)
 	}
@@ -43,11 +43,12 @@ class UpdateTask extends Component {
 	}
 	componentDidUpdate()
 	{
-		if($('#updatetask').css('display')!='none')
+		if($('#updatetask').css('display')!='none' && this.state.task=="")
 		{
+			console.log("$('.tasknameediting').val()")
 		this.setState({due:$('.taskdueediting').val()})
 		this.setState({task:$('.tasknameediting').val()})
-	}
+		}
 	}
 	click(e)
 	{

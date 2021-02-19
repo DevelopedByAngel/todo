@@ -22,11 +22,11 @@ const Task = (props) => {
 					<CgClose/>
 				</span>
 				<span
-					onClick={(e) => updatetaskname(e, rerender)}
+					onClick={(e) => updatetaskname(e, rerender,id)}
 					id={id}
 					className="edit"
 				>
-					<AiFillEdit className="taskoptimg" onClick={()=>$('#'+id).click()}/>
+					<AiFillEdit className="taskoptimg" id={id} onClick={()=>$('#'+id).click()}/>
 				</span>
 				</div>
 			</div>
@@ -53,21 +53,16 @@ const checktask = (id,task,due,updatetask) =>
 	}
 	updatetask(task)
 }
-const updatetaskname = (e, rerender) => {
-	var a = $(e);
-	console.log($(a).attr('class'))
-	console.log($(e.target).attr("class"));
-	if ($(e.target).attr("class") == "taskoptimg") {
-		a = $(e.target).parent();
-	}
-	console.log(a,$(a))
-	$("#updatetask").css("display", "block");
-	console.log("ok" + $("#taskname" + $(a).attr("id")).text());
-	$(".editing").attr("class", "");
-	$(a).attr("class", "edit editing");
-	$(".tasknameediting").val( $("#taskname" + $(a).attr("id")).text());
-	$(".taskdueediting").val(reverseDate($("#taskdue" + $(a).attr("id")).text())
-	);
+const updatetaskname = (e, rerender,id) => {
+
+	$("#updatetask").css("display","block");
+	$('.editing').attr("class","edit")
+	$('.edit#'+id).attr("class","edit editing")
+	$('.tasknameediting').val($("#taskname" + id).text())
+	$(".taskdueediting").val(reverseDate($("#taskdue" + id).text()));
+
+
+	
 };
 
 const click = (e) => {

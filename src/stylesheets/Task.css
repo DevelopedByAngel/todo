@@ -16,6 +16,10 @@
 	font-size:larger;
 	text-transform:capitalize;
 }
+.newtask
+{
+	background:#b1601e;
+}
 .task input.check
 {
 	position: absolute;
