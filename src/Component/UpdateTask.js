@@ -7,8 +7,8 @@ class UpdateTask extends Component {
 		super(props);
 		this.state=
 		{
-			task:'new',
-			due:'10-10-2020'
+			task:$('.tasknameediting').val(),
+			due:$('.taskdueediting').val()
 		}
 	}
 	taskchange=(task)=>
@@ -25,7 +25,9 @@ class UpdateTask extends Component {
 	}
 	onUpdate=(e)=>
 	{
-		console.log('ok')
+		console.log(this.state)
+		console.log($('.tasknameediting').val())
+		
 		e.preventDefault();
 		var data={
 			id:$('.editing').attr('id'),
@@ -33,6 +35,19 @@ class UpdateTask extends Component {
 			due:this.state.due
 		}
 		this.props.updatetaskname(data)
+	}
+	componentDidMount()
+	{
+		this.setState({due:$('.taskdueediting').val()})
+		this.setState({task:$('.tasknameediting').val()})
+	}
+	componentDidUpdate()
+	{
+		if($('#updatetask').css('display')!='none')
+		{
+		this.setState({due:$('.taskdueediting').val()})
+		this.setState({task:$('.tasknameediting').val()})
+	}
 	}
 	click(e)
 	{
@@ -42,8 +57,9 @@ class UpdateTask extends Component {
 	  render()
 	  {
 	  		console.log(this.props.state)
-	  		$('.tasknameediting').val($('.tasknameediting').attr('task'))
-	  		$('.taskdueediting').val($('.taskdueediting').attr('due'))
+
+	  		// $('.tasknameediting').val($('.tasknameediting').attr('task'))
+	  		// $('.taskdueediting').val($('.taskdueediting').attr('due'))
 	  return (
 	  	<div id="updatetask">
 	  	<div className="formblack" onClick={(e)=>this.click(e)}>

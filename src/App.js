@@ -29,7 +29,7 @@ class App extends Component {
   updatetask = (task) => {
     console.log(task);
     this.setState({ task: task });
-    $(".delete,.edit,#newtask,#updatetask").css("display", "none");
+    $("#updatetask").css("display", "none");
   };
   deletetask = (data) => {
     console.log(data);

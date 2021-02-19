@@ -26,7 +26,7 @@ const Task = (props) => {
 					id={id}
 					className="edit"
 				>
-					<AiFillEdit className="taskoptimg"/>
+					<AiFillEdit className="taskoptimg" onClick={()=>$('#'+id).click()}/>
 				</span>
 				</div>
 			</div>
@@ -56,7 +56,6 @@ const checktask = (id,task,due,updatetask) =>
 const updatetaskname = (e, rerender) => {
 	var a = $(e);
 	console.log($(a).attr('class'))
-	// rerender();
 	console.log($(e.target).attr("class"));
 	if ($(e.target).attr("class") == "taskoptimg") {
 		a = $(e.target).parent();
@@ -66,10 +65,8 @@ const updatetaskname = (e, rerender) => {
 	console.log("ok" + $("#taskname" + $(a).attr("id")).text());
 	$(".editing").attr("class", "");
 	$(a).attr("class", "edit editing");
-	$(".tasknameediting").attr("task", $("#taskname" + $(a).attr("id")).text());
-	$(".taskdueediting").attr(
-		"due",
-		reverseDate($("#taskdue" + $(a).attr("id")).text())
+	$(".tasknameediting").val( $("#taskname" + $(a).attr("id")).text());
+	$(".taskdueediting").val(reverseDate($("#taskdue" + $(a).attr("id")).text())
 	);
 };
 

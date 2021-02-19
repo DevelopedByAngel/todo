@@ -37,7 +37,7 @@ class Newtask extends Component {
 		.then(task=>
 		{
 			console.log(task.id);
-			$("#newtask").css("display","block")
+			$("#newtask").css("display","flex")
 			$('#newtask .nameinput').attr('value',"");
 			$('#newtask .dateinput').attr('value',"");
 			this.props.updatetask(task);
