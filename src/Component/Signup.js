@@ -34,7 +34,6 @@ class Signup extends Component {
 		.then(res=>res.json())
 		.then(user=>
 		{
-			console.log(user);
 			if(user.id)
 			{
 				this.props.updateuser(user);
