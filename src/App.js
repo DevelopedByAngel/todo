@@ -27,12 +27,10 @@ class App extends Component {
     this.setState({ user: user });
   };
   updatetask = (task) => {
-    console.log(task);
     this.setState({ task: task });
     $("#updatetask").css("display", "none");
   };
   deletetask = (data) => {
-    console.log(data);
     var id = data;
     fetch("https://todo-appapi.herokuapp.com/delete", {
       method: "POST",
@@ -49,7 +47,6 @@ class App extends Component {
       .catch((err) => alert(err));
   };
   updatetaskname = (data) => {
-    console.log(data);
     var id = data.id;
     var task = data.task;
     var due = data.due;
@@ -67,7 +64,6 @@ class App extends Component {
     })
       .then((res) => res.json())
       .then((task) => {
-        console.log(task);
         this.updatetask(task);
         $("#updatetask").css("display", "none");
       })
@@ -111,7 +107,6 @@ class App extends Component {
        }
   };
   rerender = () => {
-    console.log("re-rendering............");
     this.updateuser(this.state.user);
   };
   render() {
