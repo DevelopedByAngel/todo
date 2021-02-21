@@ -42,7 +42,6 @@ class Login extends Component {
 						$('form').css('display','none')
 						$('.round').css('display','flex');
 					},1000);
-					console.log(user.id);
 					this.props.updateuser(user);
 					fetch('https://todo-appapi.herokuapp.com/tasks',{
 					method:'POST',
@@ -54,7 +53,6 @@ class Login extends Component {
 					.then(res=>res.json())
 					.then(task=>
 					{
-						console.log(task);
 						this.props.updatetask(task);
 						setTimeout(()=>{
 						this.props.route("task");
