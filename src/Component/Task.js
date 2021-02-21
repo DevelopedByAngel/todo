@@ -5,7 +5,6 @@ import {CgClose} from "react-icons/cg"
 import {AiFillEdit} from "react-icons/ai"
 const Task = (props) => {
 	const { task, id, due,done, deletetask,updatetask, rerender } = props;
-	console.log("due" + due);
 	var date = "" + due;
 	date = date.slice(0, 10);
 	return (
@@ -36,7 +35,6 @@ const Task = (props) => {
 };
 const checktask = (id,task,due,updatetask) =>
 {
-	console.log(updatetask)
 	if(document.querySelector("#task"+id).querySelector(".check").checked)
 	{
 		var done=true;
@@ -66,7 +64,6 @@ const updatetaskname = (e, rerender,id) => {
 };
 
 const click = (e) => {
-console.log(e)
 $(".newtask").attr("class", "newtask");
 		$(".task").attr("class", "task");
 		$("#task"+e).attr("class", "task tasknow");
