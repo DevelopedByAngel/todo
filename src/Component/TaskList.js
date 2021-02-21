@@ -3,7 +3,6 @@ import Task from "./Task";
 import Options from "./Options";
 const TaskList = (props) => {
 	const { tasklist, deletetask,updatetaskname, rerender,sort } = props;
-	console.log(updatetaskname)
 	if(sort=="name")
 		var sortmethod=compareName
 	else 
@@ -25,7 +24,6 @@ const TaskList = (props) => {
 };
 const compareDate=(a,b)=>
 { 
-	console.log("sort by date")
 	var d1=new Date(a.due);
 	var d2=new Date(b.due);
 	var compareDate=0
@@ -41,7 +39,6 @@ const compareDate=(a,b)=>
 }
 const compareName=(a,b)=>
 {
-	console.log("sort by name")
 	if(a.task.toLowerCase()>b.task.toLowerCase())
 		return 1;
 	else if(a.task.toLowerCase()<b.task.toLowerCase())
