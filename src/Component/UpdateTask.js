@@ -67,9 +67,9 @@ class UpdateTask extends Component {
 	      <div className="formin" >
 	      <form className="Taskform" onSubmit={(e)=>this.onUpdate(e)}>
 	      <label htmlFor="task">Task</label>
-	      <input type="text" name="task" className="tasknameediting"  onChange={(e)=>this.taskchange(e)}></input><br/>
+	      <input type="text" name="task" className="tasknameediting"  onChange={(e)=>this.taskchange(e)} required="True"></input><br/>
 	      <label htmlFor="due">Date</label>
-	      <input type="date" name="due" className="taskdueediting" onChange={(e)=>this.duechange(e)}></input>
+	      <input type="date" name="due" className="taskdueediting" onChange={(e)=>this.duechange(e)}  required="True"></input>
 	      <input type="submit" value="Update" id="updatetaskbtn" className="submitbtn" ></input>
 	      </form>
 	      </div>

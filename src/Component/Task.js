@@ -9,7 +9,7 @@ const Task = (props) => {
 	var date = "" + due;
 	date = date.slice(0, 10);
 	return (
-		<div className="task" id={"task" + id} onClick={(e) => click(e)}>
+		<div className="task" id={"task" + id} onClick={(e) => click(id)}>
 			<div className="taskdetails">
 			<input type="checkbox" className="check" checked={done} onClick={()=>checktask(id,task,due,updatetask)}/>
 				<p taskid={id} id={"taskname" + id} className="taskname">
@@ -66,24 +66,11 @@ const updatetaskname = (e, rerender,id) => {
 };
 
 const click = (e) => {
-	if ($(e.target).attr("class") == "task") {
-		$(".newtask").attr("class", "newtask");
+console.log(e)
+$(".newtask").attr("class", "newtask");
 		$(".task").attr("class", "task");
-		$(e.target).attr("class", "task tasknow");
-	}
-	if ($(".delete").css("display") == "none") {
-		if ($(e.target).parent().attr("class") == "task") {
-			$(".task").attr("class", "task");
-		$(".newtask").attr("class", "newtask");
+		$("#task"+e).attr("class", "task tasknow");
 
-			$(e.target).parent().attr("class", "task tasknow");
-		} else if ($(e.target).parent().parent().attr("class") == "task") {
-			$(".task").attr("class", "task");
-		$(".newtask").attr("class", "newtask");
-
-			$(e.target).parent().parent().attr("class", "task tasknow");
-		}
-	}
 };
 const reverseDate = (str) => {
 	var list = str.split("-");

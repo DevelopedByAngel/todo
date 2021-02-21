@@ -65,6 +65,7 @@ const dragend = (e) => {
 	$(".eg").css("top", e.clientY - 75);
 };
 const optionsclick = () => {
+	console.log($(".drag").css("left"))
 	$(".Options").css("animation", "unset");
 	if (
 		parseInt($(".drag").css("left")) < $(window).width() / 2 &&
@@ -154,6 +155,10 @@ const optionsclick = () => {
 			});
 			$("#sizeopt").css("top", parseInt($(".drag").css("top")));
 		}
+	}
+	else
+	{
+		console.log('ok')
 	}
 };
 
