@@ -19,14 +19,11 @@ class UpdateTask extends Component {
 	}
 	duechange=(due)=>
 	{
-		console.log(due.target.value)
 		this.setState({due:due.target.value});
 		$('.taskdueediting').attr("due",due.target.value)
 	}
 	onUpdate=(e)=>
 	{
-		console.log(this.state)
-		console.log($('.tasknameediting').val())
 		
 		e.preventDefault();
 		var data={
@@ -45,7 +42,6 @@ class UpdateTask extends Component {
 	{
 		if($('#updatetask').css('display')!='none' && this.state.task=="")
 		{
-			console.log("$('.tasknameediting').val()")
 		this.setState({due:$('.taskdueediting').val()})
 		this.setState({task:$('.tasknameediting').val()})
 		}
@@ -57,7 +53,6 @@ class UpdateTask extends Component {
 	}
 	  render()
 	  {
-	  		console.log(this.props.state)
 
 	  		// $('.tasknameediting').val($('.tasknameediting').attr('task'))
 	  		// $('.taskdueediting').val($('.taskdueediting').attr('due'))
