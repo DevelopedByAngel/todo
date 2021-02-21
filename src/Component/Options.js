@@ -34,7 +34,6 @@ const Options = (props) => {
 $(".tooltip").css("left", "");
 const size=()=>
 {
-	console.log("size change",$('.task').css("font-size"))
 	if($('.task').css("font-size")=="19.2px")
 		$('.task').css("font-size","xx-large");
 	else
@@ -65,7 +64,6 @@ const dragend = (e) => {
 	$(".eg").css("top", e.clientY - 75);
 };
 const optionsclick = () => {
-	console.log($(".drag").css("left"))
 	$(".Options").css("animation", "unset");
 	if (
 		parseInt($(".drag").css("left")) < $(window).width() / 2 &&
