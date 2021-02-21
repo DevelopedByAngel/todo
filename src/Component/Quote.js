@@ -6,7 +6,6 @@ const Quotes=require('./quotes.json')
 const Quote=(props)=>
 {
 	const {quote}=props;
-	console.log(Quotes[Math.floor(Math.random()*333)]);
 	const a=Quotes[Math.floor(Math.random()*333)];
 	const q=quote
 	return (
