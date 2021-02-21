@@ -4,7 +4,6 @@ import '../stylesheets/Nav.css'
 const Nav=(props)=>
 {
 	const {route,now}=props;
-	console.log(now,"now")
 	if(now=='task')
 		$('.signout').css('display', 'block')
 	else
@@ -17,7 +16,6 @@ const Nav=(props)=>
 	{
 		if($(window).width()<600)
 			$('.menubutton').click();
-		console.log(r,now)
 		
 		if(r!==now)
 		route(r)
