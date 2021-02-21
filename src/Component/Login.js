@@ -35,6 +35,7 @@ class Login extends Component {
 				.then(res=>res.json())
 				.then(user=>
 				{
+
 					if(user.id)
 					{
 					$('form').css('height','0%')
@@ -57,20 +58,23 @@ class Login extends Component {
 						setTimeout(()=>{
 						this.props.route("task");
 						this.props.route("task");
-						if(task.severity=="ERROR")
+						if(task.severity==="ERROR")
 						{
 							alert(task.details)
 						}
 						},2500)
 					})
-					.catch(err=>Error(err.message));
+					.catch(err=>alert("error occurred"));
 				}
-				if(user.severity=="ERROR")
+				else if(user==="wrong password")
+					alert("Wrong credentials")
+				if(user.severity==="ERROR")
 						{
 							alert(user.details)
 						}
+
 			})
-				.catch(err=>alert(err))
+				.catch(err=>alert('Retry..'))
 			
 	}
 

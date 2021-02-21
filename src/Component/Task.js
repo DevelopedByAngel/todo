@@ -10,7 +10,7 @@ const Task = (props) => {
 	return (
 		<div className="task" id={"task" + id} onClick={(e) => click(id)}>
 			<div className="taskdetails">
-			<input type="checkbox" className="check" checked={done} onClick={()=>checktask(id,task,due,updatetask)}/>
+			<input type="checkbox" className="check" checked={done} onClick={()=>checktask(id,task,due,updatetask)} onChange={()=>checktask(id,task,due,updatetask)}/>
 				<p taskid={id} id={"taskname" + id} className="taskname">
 					{task}
 				</p>
