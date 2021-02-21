@@ -98,7 +98,7 @@ class Login extends Component {
 	      </span>
 	      <input type="submit" value="Login" id="submit"></input>
 	      </form>
-	      <div class="round">
+	      <div className="round">
 	      <span></span>
 	      <span></span>
 	      <span></span>

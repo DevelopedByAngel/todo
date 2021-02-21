@@ -71,7 +71,7 @@ class App extends Component {
   };
   sort=(type)=>
   {
-    if(this.state.sort!=type)
+    if(this.state.sort!==type)
     this.setState({sort: type});
   }
   /*
@@ -97,9 +97,9 @@ class App extends Component {
   *** ************
   ****************************************************************/
   RouteChange = (route) => {
-    if (route == "login") this.setState({ route: "login" });
-    else if (route == "signup") this.setState({ route: "signup" });
-    else if (route == "task") 
+    if (route === "login") this.setState({ route: "login" });
+    else if (route === "signup") this.setState({ route: "signup" });
+    else if (route === "task") 
       {
         this.setState({ route: "task" });
         const q=Quotes[Math.floor(Math.random()*333)];

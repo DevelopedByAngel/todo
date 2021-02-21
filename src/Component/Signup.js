@@ -40,10 +40,10 @@ class Signup extends Component {
 				this.props.updatetask([]);
 				this.props.route('task')
 			}
-			if(user.severity=="ERROR")
+			if(user.severity==="ERROR")
 			{
 				var error;
-				if(user.code=="23505")
+				if(user.code==="23505")
 					error="Email already registered .Try to login"
 				alert(error)
 			}

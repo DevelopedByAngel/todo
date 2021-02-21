@@ -1,12 +1,12 @@
 import React from "react";
 import Task from "./Task";
-import Options from "./Options";
 const TaskList = (props) => {
 	const { tasklist, deletetask,updatetaskname, rerender,sort } = props;
-	if(sort=="name")
-		var sortmethod=compareName
+	var sortmethod;
+	if(sort==="name")
+		sortmethod=compareName
 	else 
-		var sortmethod=compareDate
+		sortmethod=compareDate
 	return tasklist.sort(sortmethod).map((task, index) => {
 		return (
 			<Task

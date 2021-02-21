@@ -68,7 +68,7 @@
 }
 @media only screen and (max-width: 600px)
 {
-	.task,.delete,.edit
+	.task,.newtask
 	{
 		width:90vw;
 	}

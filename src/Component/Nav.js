@@ -4,7 +4,7 @@ import '../stylesheets/Nav.css'
 const Nav=(props)=>
 {
 	const {route,now}=props;
-	if(now=='task')
+	if(now==='task')
 		$('.signout').css('display', 'block')
 	else
 		$('.signout').css('display','none')

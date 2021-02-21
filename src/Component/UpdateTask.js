@@ -40,15 +40,15 @@ class UpdateTask extends Component {
 	}
 	componentDidUpdate()
 	{
-		if($('#updatetask').css('display')!='none' && this.state.task=="")
-		{
-		this.setState({due:$('.taskdueediting').val()})
-		this.setState({task:$('.tasknameediting').val()})
-		}
+		// if($('#updatetask').css('display')!=='none' && this.state.task==="")
+		// {
+		// this.setState({due:$('.taskdueediting').val()})
+		// this.setState({task:$('.tasknameediting').val()})
+		// }
 	}
 	click(e)
 	{
-		if($(e.target).attr("class")=="formblack")
+		if($(e.target).attr("class")==="formblack")
 			$('#updatetask').hide();
 	}
 	  render()
@@ -62,7 +62,7 @@ class UpdateTask extends Component {
 	      <div className="formin" >
 	      <form className="Taskform" onSubmit={(e)=>this.onUpdate(e)}>
 	      <label htmlFor="task">Task</label>
-	      <input type="text" name="task" className="tasknameediting"  onChange={(e)=>this.taskchange(e)} required="True"></input><br/>
+	      <input type="text" name="task" className="tasknameediting"  onChange={(e)=>this.taskchange(e)} required="True" maxLength="25"></input><br/>
 	      <label htmlFor="due">Date</label>
 	      <input type="date" name="due" className="taskdueediting" onChange={(e)=>this.duechange(e)}  required="True"></input>
 	      <input type="submit" value="Update" id="updatetaskbtn" className="submitbtn" ></input>

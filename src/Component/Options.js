@@ -34,7 +34,7 @@ const Options = (props) => {
 $(".tooltip").css("left", "");
 const size=()=>
 {
-	if($('.task').css("font-size")=="19.2px")
+	if($('.task').css("font-size")==="19.2px")
 		$('.task').css("font-size","xx-large");
 	else
 		$('.task').css("font-size","larger");

@@ -46,13 +46,13 @@ class Newtask extends Component {
 	  render()
 	  {
 	  return (
-	  	<div className="newtask tasknow" id="newtask" onClick={()=>{console.log("ok");$('.task').attr('class','task');$('.newtask').attr('class','newtask tasknow');}}>
+	  	<div className="newtask tasknow" id="newtask" onClick={()=>{$('.task').attr('class','task');$('.newtask').attr('class','newtask tasknow');}}>
 	  	<form className="Taskform taskdetails" onSubmit={(e)=>this.onsubmit(e)}>
-	      <input type="text" name="task" className="nameinput"  onChange={(e)=>this.taskchange(e)} required="True"></input><br/>
+	      <input type="text" name="task" className="nameinput"  onChange={(e)=>this.taskchange(e)} required="True"  maxLength="25"></input><br/>
 	      <input type="date" name="due" className="dateinput" onChange={(e)=>this.duechange(e)} required="True"></input>
 	      <input type="submit" value="add" id="newtaskbtn" className="submitbtn"></input>
 	      </form>
-			<p class="link"></p>
+			<p className="link"></p>
 		</div>
 	  	
 	    );

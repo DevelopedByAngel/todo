@@ -29,21 +29,22 @@ const Task = (props) => {
 				</span>
 				</div>
 			</div>
-			<p class="link"></p>
+			<p className="link"></p>
 		</div>
 	);
 };
 const checktask = (id,task,due,updatetask) =>
 {
+	var done;
 	if(document.querySelector("#task"+id).querySelector(".check").checked)
 	{
-		var done=true;
+		done=true;
 	}
 	else
 	{
-		var done=false;
+		done=false;
 	}
-	var task={
+	task={
 		id:id,
 		task:task,
 		due:due,
