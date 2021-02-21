@@ -21,7 +21,6 @@ class Newtask extends Component {
 	}
 	onsubmit=(e)=>
 	{
-		console.log('ok')
 		e.preventDefault();
 		fetch('https://todo-appapi.herokuapp.com/add',{
 			method:'POST',
